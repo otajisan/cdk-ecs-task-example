@@ -5,6 +5,7 @@ import {VpcStack} from "../lib/vpc-stack";
 import {LambdaStack} from "../lib/lambda-stack";
 import {SqsStack} from "../lib/sqs-stack";
 import {ApiGatewayStack} from "../lib/apigateway-stack";
+import {EcsStack} from "../lib/ecs-stack";
 
 const app = new cdk.App();
 
@@ -15,5 +16,4 @@ const lambdaStack = new LambdaStack(app, 'LambdaStack', {
   sqsStack: sqsStack,
 });
 new ApiGatewayStack(app, 'ApiGatewayStack', {lambdaStack: lambdaStack});
-//const ecsStack = new EcsStack(app, 'EcsStack', {vpcStack: vpcStack});
-//new CdkEcsTaskExampleStack(app, 'CdkEcsTaskExampleStack', {});
+const ecsStack = new EcsStack(app, 'EcsStack', {vpcStack: vpcStack});
