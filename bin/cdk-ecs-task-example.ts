@@ -16,4 +16,7 @@ const lambdaStack = new LambdaStack(app, 'LambdaStack', {
   sqsStack: sqsStack,
 });
 new ApiGatewayStack(app, 'ApiGatewayStack', {lambdaStack: lambdaStack});
-const ecsStack = new EcsStack(app, 'EcsStack', {vpcStack: vpcStack});
+const ecsStack = new EcsStack(app, 'EcsStack', {
+  vpcStack: vpcStack,
+  sqsStack: sqsStack,
+});

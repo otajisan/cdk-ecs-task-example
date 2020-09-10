@@ -58,7 +58,7 @@ export class LambdaStack extends cdk.Stack {
         'sqs:GetQueueAttributes',
         'sqs:GetQueueUrl',
       ],
-      resources: [props.sqsStack.queueArn]
+      resources: [props.sqsStack.queue.queueArn]
     }));
   }
 }
